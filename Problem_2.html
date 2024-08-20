@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maggie</title>
+    <script src="https://kit.fontawesome.com/8b6c95fcc2.js" crossorigin="anonymous"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Moderustic:wght@300..800&display=swap');
+
+        body {
+            font-family: "Moderustic", sans-serif;
+            padding: 0px;
+            margin: 0px;
+        }
+
+        #container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        #side-bar {
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            position: fixed;
+        }
+
+        #logo img {
+            width: 100px;
+            height: 130px;
+            padding: 0px;
+            margin: 0px;
+        }
+
+        .options {
+            width: 100px;
+            /* margin-left: 0px; */
+            padding-top: 15px;
+        }
+
+        .options img {
+            width: 50px;
+            height: 25px;
+            padding-top: 5px;
+        }
+
+        .options p {
+            text-align: center;
+        }
+
+        #main-container {
+            margin-top: 100px;
+            margin-left: 150px;
+        }
+
+        .upper {
+            display: flex;
+        }
+
+        .upper h2 {
+            /* font-weight: bold; */
+            color: rgb(51, 49, 49);
+            font-size: 50px;
+            margin-bottom: 0px;
+            padding-bottom: 0px;
+        }
+
+        .left {
+            border-right: 1px black solid;
+            padding-right: 100px;
+        }
+
+        .left h3 {
+            color: rgb(51, 49, 49);
+            font-size: 40px;
+            font-weight: 500;
+            margin-top: 0px;
+            padding-top: 0px;
+        }
+
+        .left>p:nth-of-type(1) {
+            background-color: #3c5683;
+            color: white;
+            padding: 5px;
+            width: 200px;
+            margin-top: 60px;
+        }
+
+        .left>p:nth-of-type(2) {
+            background-color: #ffffff;
+            color: black;
+            border: 1px rgb(222, 221, 221) solid;
+            padding: 5px;
+            width: 200px;
+            font-weight: 500;
+            margin-top: 30px;
+            margin-bottom: 70px;
+        }
+
+        .left>p:last-child {
+            text-align: end;
+            color: #999797;
+            text-decoration: underline;
+
+        }
+
+        .left label {
+            color: #7c7b7b;
+            font-size: 15px;
+        }
+
+        .left input {
+            padding: 20px;
+            width: 300px;
+            margin-bottom: 30px;
+            border: 1px black solid;
+        }
+
+        .left ::placeholder {
+            color: #807e7e;
+        }
+
+        .left button {
+            width: 345px;
+            padding: 20px;
+            border: 0;
+            color: #fff;
+            background-color: #cac7c7;
+            font-weight: 400;
+            font-size: 15px;
+        }
+
+        .right {
+            margin-top: 60px;
+            padding-left: 100px;
+        }
+
+        .right h3 {
+            font-size: 40px;
+            font-weight: 600;
+            color: #424040;
+        }
+
+        .right button {
+            width: 400px;
+            padding: 18px;
+            font-size: 17px;
+            background-color: rgb(48, 47, 47);
+            color: #ffffff
+        }
+        .right button:hover{
+            background-color:rgb(246, 246, 76);
+        }
+
+        .right h2 {
+            font-weight: 500;
+            font-size: 25px;
+        }
+
+        .right p {
+            justify-content: center;
+            padding: 10px;
+        }
+
+        .foot {
+            display: flex;
+            justify-content: space-around;
+            background-color: rgb(98, 69, 69);
+            width: 1170px;
+            height:200px;
+            margin-top:100px;
+            margin-left:100px;
+
+        }
+        .one{
+            padding-top: 50px;
+            /* margin-left: 40px; */
+
+        }
+        .social-logo{
+            margin-bottom: 30px;
+        }
+        .lang span{
+            border:1px white solid;
+            padding:10px;
+            color:rgb(169, 113, 113);
+            cursor: pointer;
+            
+        }
+        .lang span:hover{
+            color:white;
+        }
+        .two{
+            padding-top: 50px;
+            color:rgb(169, 113, 113);
+        }
+        .three{
+            padding-top: 50px;
+            color:rgb(169, 113, 113);
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <aside>
+            <div id="side-bar">
+                <div id="logo">
+                    <img
+                        src="data:image/jpeg;base64,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">
+                </div>
+                <div class="options">
+                    <p><img src="https://www.maggi.in/sites/default/files/2020-01/01_Rezepte.svg"><br />
+                        Recipes</p>
+                    <p><img src="https://www.maggi.in/sites/default/files/2019-12/05_Maggi.svg"><br />
+                        Maggi</p>
+                    <p><img src="https://www.maggi.in/sites/default/files/2022-12/LogoMealPlanner_0.svg"><br />
+                        MyMenu Plan</p>
+                    <p><img src="https://www.maggi.in/sites/default/files/2019-12/03_Suche_11.svg"><br />
+                        Search</p>
+                    <p><img
+                            src="https://www.maggi.in/sites/default/files/2020-07/MAGGI_Navigation_MyMaggi_0_0.svg"><br />
+                        Login</p>
+                </div>
+            </div>
+        </aside>
+        <main>
+            <div id="main-container">
+                <div class="upper">
+                    <div class="first">
+                        <h2>My Maggi</h2>
+                        <div class="left">
+                            <h3>Welcome back!</h3>
+                            <p><i class="fa-brands fa-square-facebook fa-xl"></i> Sign in with
+                                Facebook</p>
+                            <p><i class="fa-brands fa-google"
+                                    style="color: #e85e5e;border-right: 1px rgb(222, 221, 221) solid; padding-right:2px;"></i>
+                                Sign in with Google</p>
+                            <label>E-mail</label><br />
+                            <input type="email" placeholder="Enter your e-mail address here *"><br />
+                            <label>Password</label><br />
+                            <input type="password" placeholder="Enter your password here *"><br />
+                            <button>> Login via e-mail</button>
+                            <p>Forgot your password?</p>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <h3>Not registered yet?</h3>
+                        <button>> Register</button>
+                        <h2>Join Maggi today!</h2>
+                        <p><i class="fa-solid fa-check"
+                                style="color: #ffffff; background-color: rgb(33, 216, 33); padding:10px; border-radius: 50%; margin-right:20px;"></i>Your
+                            personal newsletter with<br />
+                            exciting recipes and ideas</p>
+                        <p><i class="fa-solid fa-check"
+                                style="color: #ffffff; background-color: rgb(33, 216, 33); padding:10px; border-radius: 50%; margin-right:20px;"></i>Personalize
+                            your newsletter to your<br />
+                            preferences</p>
+                        <p><i class="fa-solid fa-check"
+                                style="color: #ffffff; background-color: rgb(33, 216, 33); padding:10px; border-radius: 50%; margin-right:20px;"></i>Get
+                            to know about Maggi products</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </main>
+        <footer>
+
+            <div class="foot">
+                <div class="one">
+                    <div class="social-logo">
+                        <i class="fa-brands fa-facebook-f fa-xl" style="color: #ffffff; background:rgb(79, 44, 44); padding:20px;"></i>
+                        <i class="fa-brands fa-youtube fa-xl" style="color: #ffffff; background:rgb(79, 44, 44); padding:20px;"></i>
+                        <i class="fa-brands fa-instagram fa-xl" style="color: #ffffff; background:rgb(79, 44, 44); padding:20px;"></i>
+                        <i class="fa-brands fa-twitter fa-xl" style="color: #ffffff; background:rgb(79, 44, 44); padding:20px;"></i>
+                    </div>
+                    <div class="lang">
+                        <span>EN</span>
+                        <span>HI</span>
+                        <span>MR</span>
+                        <span>TE</span>
+                        <span>KN</span>
+                    </div>
+
+
+                </div>
+                <div class="two">
+                    <p>> Contact Us</p>
+                    <p>> Copyright</p>
+                </div>
+                <div class="three">
+                    <p>> Terms and Conditions</p>
+                    <p>> Privacy Policy</p>
+              </div>
+            </div>
+        </footer>
+  
+    
+</body>
+
+</html>
